@@ -5,11 +5,16 @@
   "version": "0.0.1",
   "keywords": [ "mikenchin", "mistore", "latex" ],
   "dependencies": {
-    "domachine/mistore": "*"
+    "domachine/mistore": "*",
+    "domachine/mistore-ejs-latex": "*"
   },
   "development": {},
   "license": "GPL",
   "scripts": [
-    "index.js"
+    "index.js",
+    "lib/backend.js"
+  ],
+  "files": [
+    "package.json"
   ]
 }
