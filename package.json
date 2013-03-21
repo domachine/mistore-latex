@@ -1,7 +1,10 @@
 {
   "dependencies": {
-    "mockery": "*",
-    "should": "*",
+    "node-tex": "*",
     "string-stream": "*"
+  },
+  "devDependencies": {
+    "mockery": "*",
+    "should": "*"
   }
 }
