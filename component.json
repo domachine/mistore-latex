@@ -1,20 +1,7 @@
 {
   "name": "mistore-latex",
-  "repo": "domachine/mistore-latex",
-  "description": "A latex-backend for mistore.",
-  "version": "0.0.1",
-  "keywords": [ "mikenchin", "mistore", "latex" ],
   "dependencies": {
-    "mikanda/mistore": "*",
-    "mikanda/mistore-ejs-latex": "*"
-  },
-  "development": {},
-  "license": "GPL",
-  "scripts": [
-    "index.js",
-    "lib/backend.js"
-  ],
-  "files": [
-    "package.json"
-  ]
+    "mistore": "*",
+    "mistore-ejs-latex": "*"
+  }
 }
