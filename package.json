@@ -1,17 +1,13 @@
 {
   "name": "mistore-latex",
   "description": "A latex-backend for mistore.",
-  "version": "0.0.1",
-  "dependencies": {
-    "mikanda/mistore": "*",
-    "mikanda/mistore-ejs-latex": "*"
-  },
-  "license": "LGPL",
+  "version": "0.0.1-1",
   "dependencies": {
     "node-tex": "*",
     "string-stream": "*",
     "mistore-ejs-latex": "*"
   },
+  "license": "LGPL",
   "devDependencies": {
     "mockery": "*",
     "should": "*"
