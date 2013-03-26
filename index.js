@@ -9,7 +9,7 @@ var backend = require('./lib/backend');
 
 module.exports = function (app, next) {
   var mistore = app.require('mistore'),
-      Backend = backend(mistore);
+      Backend = backend(app, mistore);
   mistore.backend.latex = Backend;
   next();
 };

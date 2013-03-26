@@ -35,8 +35,12 @@ describe('LaTeX Backend', function () {
       useCleanCache: true,
       warnOnUnregistered: false
     });
-    mockery.registerMock('node-tex', function (stream, deps, callback) {
+    mockery.registerMock('node-tex', function (stream, deps, opts, callback) {
       var stringStream = new StringStream();
+      should.exist(opts);
+      opts.should.have.property('env');
+      opts.env.should.have.property('TEXMFCACHE');
+      opts.env.TEXMFCACHE.should.equal('/cache/path');
       stringStream.on('end', function () {
         var pdfStream = new StringStream('PDF Stream');
         stringStream.toString().should.equal('Hello Tester');
@@ -47,6 +51,11 @@ describe('LaTeX Backend', function () {
     mockery.registerAllowable('..', true);
     latexBackend = require('..');
     app = new Application();
+    app.configuration = {
+      'mistore-latex': {
+        cache: '/cache/path'
+      }
+    };
     app.register('mistore', new Mistore());
     mistore = app.require('mistore');
     mistore.backend['ejs-latex'] = EJSLatexBackend;
