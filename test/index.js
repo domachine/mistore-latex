@@ -40,7 +40,9 @@ describe('LaTeX Backend', function () {
       should.exist(opts);
       opts.should.have.property('env');
       opts.env.should.have.property('TEXMFCACHE');
+      opts.env.should.have.property('HOME');
       opts.env.TEXMFCACHE.should.equal('/cache/path');
+      opts.env.HOME.should.equal('/home/path');
       stringStream.on('end', function () {
         var pdfStream = new StringStream('PDF Stream');
         stringStream.toString().should.equal('Hello Tester');
@@ -53,8 +55,11 @@ describe('LaTeX Backend', function () {
     app = new Application();
     app.configuration = {
       'mistore-latex': {
-        cache: '/cache/path'
-      }
+        cache: '/cache/path',
+        env: {
+          HOME: '/home/path'
+        }
+      },
     };
     app.register('mistore', new Mistore());
     mistore = app.require('mistore');
