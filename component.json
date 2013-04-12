@@ -1,7 +1,0 @@
-{
-  "name": "mistore-latex",
-  "dependencies": {
-    "mistore": "*",
-    "mistore-ejs-latex": "*"
-  }
-}
